@@ -295,14 +295,6 @@ added: REPLACEME
 
 When set to `1`, process warnings are silenced.
 
-### `NODE_PRESERVE_SYMLINKS=1`
-<!-- YAML
-added: v7.1.0
--->
-
-When set to `1`, instructs the module loader to preserve symbolic links when
-resolving and caching modules.
-
 ### `NODE_REPL_HISTORY=file`
 <!-- YAML
 added: v3.0.0
