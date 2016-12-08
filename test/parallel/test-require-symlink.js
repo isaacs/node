@@ -58,13 +58,4 @@ function test() {
     assert.strictEqual(code, 0);
     assert(!signal);
   });
-
-  // Also verify that symlinks works for setting preserve via env variables
-  const childEnv = spawn(node, [linkScript], {
-    env: util._extend(process.env, {NODE_PRESERVE_SYMLINKS: '1'})
-  });
-  childEnv.on('close', function(code, signal) {
-    assert.strictEqual(code, 0);
-    assert(!signal);
-  });
 }
