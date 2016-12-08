@@ -1,4 +1,3 @@
-// Flags: --preserve-symlinks
 'use strict';
 const common = require('../common');
 const assert = require('assert');
@@ -53,8 +52,8 @@ function test() {
   assert.strictEqual(fooModule.dep2.bar.version, 'CORRECT_VERSION');
 
   // load symlinked-script as main
-  const node = process.execPath;
-  const child = spawn(node, ['--preserve-symlinks', linkScript]);
+  var node = process.execPath;
+  var child = spawn(node, [linkScript]);
   child.on('close', function(code, signal) {
     assert.strictEqual(code, 0);
     assert(!signal);
